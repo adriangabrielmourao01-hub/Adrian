@@ -3,285 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma Omnis Óptica: Portal de Física Integrada</title>
+    <title>Mundo da Óptica</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <input type="radio" name="portal-switch" id="tab-home" checked>
-    <input type="radio" name="portal-switch" id="tab-cores">
-    <input type="radio" name="portal-switch" id="tab-espelhos">
-    <input type="radio" name="portal-switch" id="tab-olho">
-    <input type="radio" name="portal-switch" id="tab-leis">
+    <div class="aurora-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
 
-    <header class="main-portal-header">
-        <div class="portal-container">
-            <div class="brand">OMNIS ÓPTICA v2.6</div>
-            <h1>Sistema Integrado de Ciências Ópticas</h1>
-            <p>Navegue pelos sub-sites especializados através do terminal de controle abaixo. Cada módulo opera de forma autônoma como um ambiente exclusivo.</p>
-            
-            <nav class="portal-nav">
-                <label for="tab-home" class="nav-btn btn-home">🏠 Visão Geral</label>
-                <label for="tab-cores" class="nav-btn btn-cores">Sub-Site: Física das Cores</label>
-                <label for="tab-espelhos" class="nav-btn btn-espelhos">Sub-Site: Engenharia de Espelhos</label>
-                <label for="tab-olho" class="nav-btn btn-olho">Sub-Site: Biofísica Ocular</label>
-                <label for="tab-leis" class="nav-btn btn-leis">Sub-Site: Banco de Dados Geral</label>
-            </nav>
-        </div>
+    <header>
+        <div class="logo">Óptica<span>Física</span></div>
+        <p class="subtitle">A ciência da luz, dos sistemas reflexivos e do mecanismo da visão</p>
     </header>
 
-    <main class="portal-body">
+    <nav class="tab-menu">
+        <button class="tab-button active" onclick="openTab(event, 'cores')">
+            <span class="icon">🌈</span> Física das Cores
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'espelhos')">
+            <span class="icon">🪞</span> Espelhos & Reflexão
+        </button>
+        <button class="tab-button" onclick="openTab(event, 'olho')">
+            <span class="icon">👁️</span> Ótica do Olho Humano
+        </button>
+    </nav>
 
-        <section class="sub-site welcome-section">
-            <div class="welcome-card">
-                <h2>Selecione um Módulo Científico</h2>
-                <p>Clique em qualquer um dos botões do terminal acima para carregar o sub-site correspondente. Toda a renderização é processada via hardware através de seletores nativos CSS.</p>
-                <div class="grid-preview">
-                    <label for="tab-cores" class="preview-box p-cores">Física das Cores</label>
-                    <label for="tab-espelhos" class="preview-box p-espelhos">Espelhos Esféricos</label>
-                    <label for="tab-olho" class="preview-box p-olho">Biofísica Ocular</label>
-                    <label for="tab-leis" class="preview-box p-leis">Enciclopédia Geral</label>
+    <main class="container">
+
+        <div id="cores" class="tab-content active">
+            <div class="content-grid">
+                <div class="text-side">
+                    <span class="tag">Fenômeno da Luz</span>
+                    <h2>A Física das Cores e o Espectro Visível</h2>
+                    <p>A cor não é uma propriedade fixa dos objetos, mas sim uma interpretação sensorial que o nosso cérebro faz da radiação eletromagnética. A luz solar (luz branca) é a composição de infinitas frequências de onda que compreendem o espectro visível.</p>
+                    
+                    <h3>O Prisma de Newton e a Dispersão</h3>
+                    <p>Quando a luz branca atravessa um meio translúcido dispersivo (como um prisma de vidro), ela se decompõe. Como cada cor possui um comprimento de onda específico, elas se propagam com velocidades distintas, sofrendo refração em ângulos diferentes e revelando as cores do arco-íris.</p>
+                    
+                    <h3>Absorção e Reflexão</h3>
+                    <p>A cor que enxergamos em um corpo opaco corresponde estritamente à frequência de luz que ele reflete. Uma superfície vermelha absorve quase todos os comprimentos de onda, exceto a faixa do vermelho, que é enviada de volta aos nossos olhos.</p>
+                </div>
+                <div class="image-side">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Espectro de cores e dispersão da luz através de um prisma">
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <article id="site-cores" class="sub-site module-cores">
-            <header class="sub-site-header">
-                <span class="sub-site-badge">Módulo 01 // Emissão & Espectro</span>
-                <h2>Sub-Site: Fenomenologia das Cores</h2>
-                <p>Estudo da radiação eletromagnética visível, dispersão cromática e decomposição da luz.</p>
-            </header>
-            
-            <div class="sub-site-content">
-                <div class="sidebar-metrics">
-                    <div class="metric-card">
-                        <h5>Espectro Visível</h5>
-                        <p>400 nm a 700 nm</p>
-                    </div>
-                    <div class="metric-card">
-                        <h5>Canais RGB</h5>
-                        <p>24-bit (16.7M Cores)</p>
-                    </div>
-                    <div class="metric-card">
-                        <h5>Velocidade no Vácuo</h5>
-                        <p>299.792.458 m/s</p>
-                    </div>
-                </div>
-
-                <div class="main-article-text">
-                    <h3>Dispersão da Luz e Espectroscopia</h3>
-                    <p>A luz branca, ao atravessar um meio material refratário como um prisma de vidro, sofre desvios diferenciados dependendo do seu comprimento de onda. Esse fenômeno, imortalizado pelo experimento do *Prisma de Newton*, comprova que o branco é a soma de todas as cores. A física moderna classifica esse comportamento através do índice de refração dependente da frequência.</p>
+        <div id="espelhos" class="tab-content">
+            <div class="content-grid">
+                <div class="text-side">
+                    <span class="tag">Geometria Óptica</span>
+                    <h2>Espelhos e as Leis da Reflexão</h2>
+                    <p>A reflexão ocorre quando um feixe luminoso atinge uma superfície e retorna ao seu meio de origem. É regida por leis estritas: o raio incidente, a reta normal e o raio refletido estão no mesmo plano, e o ângulo de incidência é igual ao ângulo de reflexão.</p>
                     
-                    <h3>Síntese Aditiva (RGB) e Receptores Biológicos</h3>
-                    <p>Diferente das tintas (sistema subtrativo), a mistura de luzes trabalha por adição. No centro da nossa simulação laboratorial, quando as intensidades máximas de vermelho, verde e azul se encontram, o cérebro interpreta o estímulo como ausência de cor cromática isolada, ou seja, luz branca purificada.</p>
-
-                    <div class="math-block">
-                        <h6>Equação de Energia de Cristais Ópticos</h6>
-                        <p>A relação entre energia, frequência e velocidade da onda é modelada matematicamente por:</p>
-                        <div class="latex-formula">$$E = h \cdot f \quad \text{onde} \quad f = \frac{c}{\lambda}$$</div>
-                        <p>Isso explica por que fótons de luz violeta possuem quase o dobro de energia mecânica que fótons de luz vermelha.</p>
-                    </div>
-                </div>
-
-                <div class="simulation-space">
-                    <div class="lab-monitor">
-                        <div class="painel-cores">
-                            <div class="luz vermelha"></div>
-                            <div class="luz verde"></div>
-                            <div class="luz azul"></div>
-                            <div class="centro-branco">Branco (RGB)</div>
+                    <h3>Tipos de Sistemas Reflexivos</h3>
+                    <div class="cards-container">
+                        <div class="mini-card">
+                            <h4>Planos</h4>
+                            <p>Imagens virtuais, simétricas e de mesmo tamanho, com inversão lateral.</p>
+                        </div>
+                        <div class="mini-card">
+                            <h4>Côncavos</h4>
+                            <p>Curvatura interna. Podem ampliar a imagem ou invertê-la de acordo com a distância.</p>
+                        </div>
+                        <div class="mini-card">
+                            <h4>Convexos</h4>
+                            <p>Curvatura externa. Sempre reduzem a imagem, ampliando o campo visual.</p>
                         </div>
                     </div>
-                    <span class="lab-tag">Simulador C01: Superposição de Ondas Coerentes</span>
+                </div>
+                <div class="image-side">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Linhas geométricas limpas mimetizando reflexão e ângulos de espelhos">
+                    </div>
                 </div>
             </div>
-        </article>
+        </div>
 
-
-        <article id="site-espelhos" class="sub-site module-espelhos">
-            <header class="sub-site-header">
-                <span class="sub-site-badge">Módulo 02 // Geometria de Raios</span>
-                <h2>Sub-Site: Sistemas de Espelhos Esféricos</h2>
-                <p>Mapeamento de catóptrica, superfícies refletoras polidas e equações de imagem.</p>
-            </header>
-            
-            <div class="sub-site-content">
-                <div class="sidebar-metrics">
-                    <div class="metric-card">
-                        <h5>Tipo de Espelho</h5>
-                        <p>Côncavo Esférico</p>
-                    </div>
-                    <div class="metric-card">
-                        <h5>Condição de Nitidez</h5>
-                        <p>Ângulo de Abertura &lt; 10°</p>
-                    </div>
-                    <div class="metric-card">
-                        <h5>Natureza da Imagem</h5>
-                        <p>Real, Invertida e Menor</p>
-                    </div>
-                </div>
-
-                <div class="main-article-text">
-                    <h3>Teoria dos Espelhos de Gauss</h3>
-                    <p>Para obtermos imagens nítidas em superfícies curvas esféricas, devemos seguir as condições de Gauss: o ângulo de abertura deve ser pequeno e os raios incidentes devem ser quase paralelos ao eixo principal. Caso contrário, o sistema sofrerá com o fenômeno da *Aberração Esférica*, distorcendo as bordas da imagem formada.</p>
+        <div id="olho" class="tab-content">
+            <div class="content-grid">
+                <div class="text-side">
+                    <span class="tag">Anatomia Funcional</span>
+                    <h2>A Ótica e o Mecanismo da Visão</h2>
+                    <p>O olho humano opera de forma análoga a uma câmera fotográfica. Sua função principal é focalizar a luz do ambiente externo e convertê-la em sinais elétricos interpretáveis pelo sistema nervoso.</p>
                     
-                    <h3>Comportamento Prático da Seta Simulada</h3>
-                    <p>No monitor geométrico ao lado, posicionamos um objeto real além do centro de curvatura (C). A luz viaja em linhas retas a partir da ponta da seta. O raio paralelo atinge a superfície do espelho e retorna obrigatoriamente cruzando pelo Foco (F). O raio que vai pelo foco retorna paralelo. O ponto onde esses dois feixes se cruzam fisicamente gera a ponta da imagem projetada de cabeça para baixo.</p>
-
-                    <div class="math-block">
-                        <h6>Equações Analíticas Computacionais</h6>
-                        <p>Calcula-se a abscissa da imagem ($p'$) e o fator de ampliação linear ($A$) pelas expressões:</p>
-                        <div class="latex-formula">$$\frac{1}{f} = \frac{1}{p} + \frac{1}{p'} \quad \Longrightarrow \quad A = \frac{i}{o} = -\frac{p'}{p}$$</div>
-                        <p>Se o sinal de $A$ for negativo, prova-se analiticamente que a imagem está invertida em relação ao objeto.</p>
-                    </div>
-                </div>
-
-                <div class="simulation-space">
-                    <div class="lab-monitor">
-                        <div class="optica-box">
-                            <div class="eixo-principal"></div>
-                            <div class="linhas-guia">
-                                <span>C</span>
-                                <span>F</span>
-                                <span>V</span>
-                            </div>
-                            <div class="espelho-concavo"></div>
-                            
-                            <div class="raio-luz inc-1"></div>
-                            <div class="raio-luz ref-1"></div>
-                            <div class="raio-luz inc-2"></div>
-                            <div class="raio-luz ref-2"></div>
-                            
-                            <div class="objeto-real"></div>
-                            <div class="imagem-real"></div>
-                        </div>
-                    </div>
-                    <span class="lab-tag">Simulador E02: Traçado de Raios Paralelos e Focais</span>
-                </div>
-            </div>
-        </article>
-
-
-        <article id="site-olho" class="sub-site module-olho">
-            <header class="sub-site-header">
-                <span class="sub-site-badge">Módulo 03 // Biofísica & Anatomia</span>
-                <h2>Sub-Site: Óptica e Engenharia do Olho Humano</h2>
-                <p>Estudo do dioptro ocular, refração de meios biológicos transparentes e ametropias.</p>
-            </header>
-            
-            <div class="sub-site-content">
-                <div class="sidebar-metrics">
-                    <div class="metric-card">
-                        <h5>Índice do Cristalino</h5>
-                        <p>n ≈ 1.40</p>
-                    </div>
-                    <div class="metric-card">
-                        <h5>Acomodação Ciliar</h5>
-                        <p>Até +4 Dioptrias</p>
-                    </div>
-                    <div class="metric-card">
-                        <h5>Resolução Retiniana</h5>
-                        <p>~120 Megapixels</p>
-                    </div>
-                </div>
-
-                <div class="main-article-text">
-                    <h3>A Física da Refração Ocular</h3>
-                    <p>Diferente dos espelhos que refletem a luz, o olho baseia-se na refração. Quando a luz passa do ar para a Córnea e depois penetra o Cristalino, ela muda de velocidade devido aos diferentes índices de refração ($n$). Essa mudança de velocidade força a luz a desviar, convergindo em direção ao fundo do olho.</p>
+                    <h3>Foco e Formação da Imagem</h3>
+                    <p>A luz entra pela <strong>córnea</strong>, passa pela <strong>pupila</strong> e atravessa o <strong>cristalino</strong> (uma lente natural convergente). O cristalino altera sua curvatura dinamicamente para ajustar o foco, projetando a imagem invertida e reduzida diretamente na <strong>retina</strong>.</p>
                     
-                    <h3>Formação da Imagem Retiniana e Cérebro</h3>
-                    <p>O cristalino funciona como uma lente biconvexa convergente. Todo objeto situado no mundo exterior projeta uma imagem menor, real e totalmente invertida na Retina. A retina é forrada de células foforreceptoras (cones para cores e bastonetes para preto/branco). Essas células convertem os fótons em eletricidade que viaja pelo nervo óptico até o lobo occipital do cérebro, onde o software neurológico desinverte a imagem.</p>
-
-                    <div class="math-block">
-                        <h6>Lei de Snell e Vergência de Lentes Médicas</h6>
-                        <p>A dobra da luz obedece à Lei de Snell, e a potência do olho é medida em dioptrias (grau):</p>
-                        <div class="latex-formula">$$n_1 \cdot \sin(\theta_1) = n_2 \cdot \sin(\theta_2) \quad \text{e} \quad V = \frac{1}{f}$$</div>
-                        <p>Um olho humano perfeito tem uma vergência padrão fixa de aproximadamente 60 dioptrias para focar imagens localizadas no infinito.</p>
-                    </div>
+                    <h3>Fotorrecepção</h3>
+                    <p>Na retina, células especializadas (cones e bastonetes) captam os fótons e geram impulsos nervosos enviados pelo nervo óptico até o cérebro, onde a imagem é desinvertida e processada.</p>
                 </div>
-
-                <div class="simulation-space">
-                    <div class="lab-monitor">
-                        <div class="esquema-olho-grande">
-                            <div class="objeto-capturado"></div>
-                            <div class="globo-ocular">
-                                <div class="cornea"></div>
-                                <div class="cristalino-lente"></div>
-                                <div class="raio-convergente r-cima"></div>
-                                <div class="raio-convergente r-baixo"></div>
-                                <div class="camada-retina"></div>
-                                <div class="imagem-invertida-retina"></div>
-                            </div>
-                        </div>
+                <div class="image-side">
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Estrutura geométrica focada lembrando lentes ópticas e a retina do olho">
                     </div>
-                    <span class="lab-tag">Simulador B03: Refração Convergente e Projeção Invertida</span>
                 </div>
             </div>
-        </article>
-
-
-        <article id="site-leis" class="sub-site module-leis">
-            <header class="sub-site-header">
-                <span class="sub-site-badge">Módulo 04 // Central de Documentação</span>
-                <h2>Sub-Site: Enciclopédia de Fórmulas e Leis Fundamentais</h2>
-                <p>Tabela comparativa sintética e consolidação de conceitos para engenharia óptica.</p>
-            </header>
-            
-            <div class="sub-site-content full-width">
-                <div class="leis-cards-container">
-                    <div class="lei-doc-card">
-                        <h4>Princípio de Fermat</h4>
-                        <p>A luz sempre percorre a trajetória que exige o menor tempo de viagem possível entre dois pontos, mesmo que isso signifique mudar de direção em meios refratários distintos.</p>
-                    </div>
-                    <div class="lei-doc-card">
-                        <h4>Princípio da Reversibilidade</h4>
-                        <p>A trajetória seguida por um raio de luz não se altera quando o sentido de propagação é invertido. O caminho de ida é exatamente idêntico ao caminho de volta.</p>
-                    </div>
-                    <div class="lei-doc-card">
-                        <h4>Acomodação Visual</h4>
-                        <p>Processo dinâmico em que o muscle ciliar altera o raio de curvatura das faces do cristalino, aumentando ou diminuindo o foco para garantir que a imagem caia na retina.</p>
-                    </div>
-                </div>
-
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Sistema</th>
-                                <th>Comportamento Físico Primário</th>
-                                <th>Tipo de Imagem Gerada no Simulador</th>
-                                <th>Principal Defeito / Aberração</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Física Cromática</strong></td>
-                                <td class="highlight-txt">Emissão e Absorção</td>
-                                <td>Cerebral / Psicoacústica Visual</td>
-                                <td>Daltonismo (Acromatopsia)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Catóptrica (Espelho Côncavo)</strong></td>
-                                <td class="highlight-txt">Reflexão Regular Especular</td>
-                                <td>Real, Invertida e Reduzida</td>
-                                <td>Aberração Esférica de Borda</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dioptro Ocular (Olho)</strong></td>
-                                <td class="highlight-txt">Refração por Meios Transparentes</td>
-                                <td>Real, Invertida e Reduzida</td>
-                                <td>Miopia / Hipermetropia / Astigmatismo</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </article>
+        </div>
 
     </main>
 
-    <footer class="portal-footer">
-    </footer>
+    <script>
+        function openTab(evt, tabId) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
